@@ -1,0 +1,45 @@
+# OpenClaw private configuration files (contain personal info)
+SOUL.md
+USER.md
+MEMORY.md
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+TOOLS.md
+
+# OpenClaw system files
+.openclaw/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# Backup files
+*.bak
+*.backup
+*~

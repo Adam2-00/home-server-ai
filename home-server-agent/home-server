@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""
+Home Server Agent - Unified CLI
+One entry point for all operations (setup, monitor, rollback, updates)
+"""
+import argparse
+import sys
+import os
+
+# Add current directory to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+def cmd_setup(args):
+    """Run setup flow."""
+    from main import main as setup_main
+    # Convert args to what main() expects
+    sys.argv = ['main.py']
+    if args.web: sys.argv.append('--web')
+    if args.dry_run: sys.argv.append('--dry-run')
+    if args.config: sys.argv.extend(['--config', args.config])
+    if args.resume: sys.argv.extend(['--resume', args.resume])
+    if args.yes: sys.argv.append('--yes')
+    return setup_main()
+
+def cmd_status(args):
+    """Show current status."""
+    from monitoring_dashboard import print_status
+    print_status()
+    return 0
+
+def cmd_dashboard(args):
+    """Start monitoring dashboard."""
+    from monitoring_dashboard import start_dashboard
+    start_dashboard(port=args.port)
+    return 0
+
+def cmd_rollback(args):
+    """Manage rollback points."""
+    from rollback_manager import (
+        list_rollback_points, create_rollback_point, 
+        rollback_to, RollbackManager
+    )
+    
+    if args.list or (not args.create and not args.rollback and not args.delete):
+        list_rollback_points()
+    elif args.create:
+        services = args.services.split(',') if args.services else ['all']
+        backup_id = create_rollback_point(services, args.description)
+        print(f"✅ Created rollback point: {backup_id}")
+    elif args.rollback:
+        success, message = rollback_to(args.rollback, confirm=not args.yes)
+        print(f"{'✅' if success else '❌'} {message}")
+        return 0 if success else 1
+    elif args.delete:
+        manager = RollbackManager()
+        success, message = manager.delete_backup(args.delete)
+        print(f"{'✅' if success else '❌'} {message}")
+        return 0 if success else 1
+    return 0
+
+def cmd_updates(args):
+    """Check for updates."""
+    from update_checker import check_updates, print_update_status
+    
+    if args.update:
+        from update_checker import UpdateChecker
+        checker = UpdateChecker()
+        success, message = checker.update_service(args.update, dry_run=args.dry_run)
+        print(f"{'✅' if success else '❌'} {message}")
+        return 0 if success else 1
+    else:
+        updates = check_updates(force=args.force)
+        print_update_status()
+    return 0
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Home Server AI - Manage your home server',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  home-server setup                    # Run interactive setup
+  home-server setup --web              # Use web configuration
+  home-server status                   # Show system status
+  home-server dashboard                # Start monitoring dashboard
+  home-server dashboard --port 8082    # Use custom port
+  home-server rollback --create        # Create rollback point
+  home-server rollback --list          # List rollback points
+  home-server updates                  # Check for updates
+  home-server updates --update jellyfin # Update specific service
+        """
+    )
+    
+    subparsers = parser.add_subparsers(dest='command', help='Command to run')
+    
+    # Setup command
+    setup_parser = subparsers.add_parser('setup', help='Run setup')
+    setup_parser.add_argument('--web', action='store_true', help='Use web UI')
+    setup_parser.add_argument('--dry-run', action='store_true', help='Preview only')
+    setup_parser.add_argument('--config', type=str, help='Load config file')
+    setup_parser.add_argument('--resume', type=str, help='Resume session')
+    setup_parser.add_argument('--yes', '-y', action='store_true', help='Auto-approve')
+    
+    # Status command
+    subparsers.add_parser('status', help='Show system status')
+    
+    # Dashboard command
+    dash_parser = subparsers.add_parser('dashboard', help='Start monitoring dashboard')
+    dash_parser.add_argument('--port', type=int, default=8081, help='Port (default: 8081)')
+    
+    # Rollback command
+    rb_parser = subparsers.add_parser('rollback', help='Manage rollback points')
+    rb_parser.add_argument('--list', action='store_true', help='List points')
+    rb_parser.add_argument('--create', action='store_true', help='Create point')
+    rb_parser.add_argument('--rollback', type=str, metavar='ID', help='Rollback to ID')
+    rb_parser.add_argument('--delete', type=str, metavar='ID', help='Delete point')
+    rb_parser.add_argument('--services', type=str, help='Services (comma-separated)')
+    rb_parser.add_argument('--description', type=str, default='', help='Description')
+    rb_parser.add_argument('--yes', '-y', action='store_true', help='Skip confirm')
+    
+    # Updates command
+    up_parser = subparsers.add_parser('updates', help='Check for updates')
+    up_parser.add_argument('--force', action='store_true', help='Force check')
+    up_parser.add_argument('--update', type=str, metavar='SERVICE', help='Update service')
+    up_parser.add_argument('--dry-run', action='store_true', help='Preview update')
+    
+    args = parser.parse_args()
+    
+    if not args.command:
+        parser.print_help()
+        return 1
+    
+    commands = {
+        'setup': cmd_setup,
+        'status': cmd_status,
+        'dashboard': cmd_dashboard,
+        'rollback': cmd_rollback,
+        'updates': cmd_updates,
+    }
+    
+    return commands[args.command](args)
+
+if __name__ == '__main__':
+    sys.exit(main())

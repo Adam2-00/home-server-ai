@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Server AI - Setup Your Personal Cloud in Minutes</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AI-powered home server setup in minutes. No technical knowledge required. Install Tailscale, AdGuard, Jellyfin, and more with GPT-4 guided automation. One-time $99.">
+    <meta name="keywords" content="home server, self hosting, personal cloud, AI setup, home automation, Tailscale, AdGuard, Jellyfin, OpenClaw, Linux server">
+    <meta name="author" content="Home Server AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://homeserver.ai/">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Font display swap for performance -->
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-display: swap;
+        }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 180%22><rect fill=%22%23667eea%22 width=%22180%22 height=%22180%22 rx=%2224%22/><text x=%2290%22 y=%22125%22 font-size=%22100%22 text-anchor=%22middle%22 fill=%22white%22>🏠</text></svg>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://homeserver.ai/">
+    <meta property="og:title" content="Home Server AI - Setup Your Personal Cloud in Minutes">
+    <meta property="og:description" content="AI-powered home server setup. No technical knowledge required. One-time $99. Your data, your control, your privacy.">
+    <meta property="og:image" content="https://homeserver.ai/og-image.png">
+    <meta property="og:site_name" content="Home Server AI">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://homeserver.ai/">
+    <meta property="twitter:title" content="Home Server AI - Setup Your Personal Cloud in Minutes">
+    <meta property="twitter:description" content="AI-powered home server setup. No technical knowledge required. One-time $99. Your data, your control, your privacy.">
+    <meta property="twitter:image" content="https://homeserver.ai/og-image.png">
+    
+    <!-- Theme Color for Mobile -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Home Server AI",
+        "description": "AI-powered home server setup tool. Install and configure your personal cloud with GPT-4 guidance.",
+        "url": "https://homeserver.ai",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Linux",
+        "offers": {
+            "@type": "Offer",
+            "price": "99.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Home Server AI"
+        }
+    }
+    </script>
+    
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Home Server AI",
+        "url": "https://homeserver.ai",
+        "logo": "https://homeserver.ai/logo.png",
+        "sameAs": [
+            "https://github.com/yourusername/home-server-agent"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@homeserver.ai",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+    
+    <!-- Website Structured Data (for search box in SERP) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Home Server AI",
+        "url": "https://homeserver.ai",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://homeserver.ai/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://homeserver.ai/"
+        }]
+    }
+    </script>
+    
+    <!-- Video Structured Data (for future video content) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Home Server AI - Setup Demo",
+        "description": "See how AI-powered home server setup works in minutes",
+        "thumbnailUrl": "https://homeserver.ai/video-thumbnail.jpg",
+        "uploadDate": "2025-02-01",
+        "duration": "PT2M30S"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --gray: #718096;
+            --success: #48bb78;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Focus visible for keyboard navigation */
+        :focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 4px 0;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-primary:focus {
+            outline: 3px solid rgba(102, 126, 234, 0.5);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #fbbf24;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Terminal Mockup */
+        .terminal {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 3rem auto 0;
+            max-width: 700px;
+            text-align: left;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27c93f; }
+
+        .terminal-content {
+            color: #a5b3ce;
+            line-height: 1.8;
+        }
+
+        .terminal-content .prompt { color: #27c93f; }
+        .terminal-content .command { color: #fff; }
+        .terminal-content .output { color: #a5b3ce; }
+        .terminal-content .success { color: #27c93f; }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 3rem 2rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .social-proof-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-proof h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--light);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: var(--gray);
+        }
+
+        /* Stack Section */
+        .stack {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stack-item {
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stack-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stack-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stack-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-item p {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .pricing .section-header h2,
+        .pricing .section-header p {
+            color: white;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            color: var(--dark);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .guarantee {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Download Section */
+        .download {
+            padding: 5rem 2rem;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .install-command {
+            background: #1a1a2e;
+            color: #a5b3ce;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            margin: 2rem auto;
+            max-width: 700px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .install-command code {
+            color: #27c93f;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .copy-btn:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            color: var(--dark);
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            font-size: 1.25rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding-top: 0.75rem;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: none;
+            position: relative;
+        }
+
+        .testimonial-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.02);
+        }
+
+        .testimonial-stars {
+            color: #f6ad55;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .testimonial-author span {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pain-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 16px;
+            border-left: 4px solid #f56565;
+        }
+
+        .pain-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .pain-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .pain-solution {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 16px;
+            color: white;
+        }
+
+        .solution-text {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .pain-solution .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .pain-solution .btn:hover {
+            background: var(--light);
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .use-cases .section-header h2,
+        .use-cases .section-header p {
+            color: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .use-case-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .use-case-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .use-case-card li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
+
+        .use-case-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #68d391;
+            font-weight: 700;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .comparison-table-wrapper {
+            max-width: 900px;
+            margin: 3rem auto;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table .winner-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .comparison-table .alt-header {
+            background: #4a5568;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-good {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .comparison-bad {
+            color: #e53e3e;
+        }
+
+        .comparison-meh {
+            color: var(--gray);
+        }
+
+        .price-row {
+            background: #f0fff4;
+        }
+
+        .price-row td {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .comparison-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Payment badges */
+        .payment-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .payment-badge {
+            background: rgba(0,0,0,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* What happens after purchase */
+        .after-purchase {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-number {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Email capture section */
+        .email-capture {
+            padding: 4rem 2rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .email-form .btn {
+            padding: 0.875rem 1.5rem;
+        }
+
+        .email-privacy {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 2px solid var(--primary);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sticky-text {
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        .sticky-text strong {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 1rem;
+            z-index: 1001;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-consent.hidden {
+            transform: translateY(100%);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-content a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .cookie-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cookie-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* As Seen On Section */
+        .as-seen-on {
+            padding: 2rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .as-seen-on p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .logo-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .logo-placeholder {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Live Activity Indicator */
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--success);
+            font-weight: 500;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-btn {
+                width: 100%;
+            }
+
+            .as-seen-on {
+                padding: 1.5rem 1rem;
+            }
+
+            .logo-strip {
+                gap: 1rem;
+            }
+            .sticky-cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sticky-text {
+                font-size: 0.9rem;
+            }
+
+            .sticky-cta .btn {
+                width: 100%;
+                min-height: 44px; /* Better touch target */
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card.featured {
+                transform: none;
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.875rem;
+            }
+            
+            .timeline::before {
+                left: 16px;
+            }
+            
+            .timeline-number {
+                width: 34px;
+                height: 34px;
+                font-size: 0.875rem;
+            }
+            
+            .timeline-item {
+                gap: 1rem;
+            }
+            
+            .timeline-content {
+                padding: 1rem;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .email-input {
+                width: 100%;
+                min-height: 44px; /* Better touch target */
+            }
+            
+            .payment-badges {
+                gap: 0.5rem;
+            }
+            
+            .payment-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem; /* Slightly smaller for better fit */
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 1rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step:not(:last-child)::after {
+                content: '↓';
+                right: 50%;
+                top: auto;
+                bottom: -1.5rem;
+                transform: translateX(50%);
+            }
+
+            .install-command {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .stats {
+                gap: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent" role="dialog" aria-label="Cookie consent" aria-live="polite">
+        <div class="cookie-content">
+            <span>🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
+            <button onclick="acceptCookies()" class="cookie-btn" aria-label="Accept cookies">Accept</button>
+        </div>
+    </div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        🚀 Limited Time: Launch pricing ends soon — Lock in $99 forever
+    </div>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Home Server AI Home">🏠 Home Server AI</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://github.com/yourusername/home-server-agent" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#download" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    ✨ Now with GPT-4 powered setup
+                </div>
+                <h1 id="hero-heading">Turn Your Old Computer Into a <span>Personal Cloud</span> in 15 Minutes</h1>
+                <p>Stop paying for cloud storage. AI-powered home server setup with zero technical skills required. Own your data, save hundreds per year.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary" aria-label="Start setup for $99">Start Setup — $99</a>
+                    <a href="#how-it-works" class="btn" style="background: rgba(255,255,255,0.2); color: white;">See How It Works</a>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="trust-badges">
+                    <span>🔒 100% Local Processing</span>
+                    <span>✓ 30-Day Guarantee</span>
+                    <span>⚡ 15 Min Average Setup</span>
+                </div>
+
+                <!-- Terminal Mockup -->
+                <div class="terminal" aria-label="Terminal demonstration">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red" aria-hidden="true"></div>
+                        <div class="terminal-dot yellow" aria-hidden="true"></div>
+                        <div class="terminal-dot green" aria-hidden="true"></div>
+                    </div>
+                    <div class="terminal-content">
+                        <div><span class="prompt">$</span> <span class="command">python3 home-server-setup</span></div>
+                        <div class="output">🏠 Home Server AI Setup Agent</div>
+                        <div class="output">Detecting hardware...</div>
+                        <div class="output">✓ CPU: Intel i5-8400 (6 cores)</div>
+                        <div class="output">✓ RAM: 16.0 GB</div>
+                        <div class="output">Generating AI installation plan...</div>
+                        <div class="output">[██████████████████░░] 85%</div>
+                        <div class="success">✓ Setup complete! Your server is ready.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- As Seen On Section -->
+        <section class="as-seen-on" aria-label="Featured in">
+            <p>Coming Soon to</p>
+            <div class="logo-strip">
+                <span class="logo-placeholder">Product Hunt</span>
+                <span class="logo-placeholder">Hacker News</span>
+                <span class="logo-placeholder">r/selfhosted</span>
+                <span class="logo-placeholder">Linux Unplugged</span>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof" aria-labelledby="social-proof-heading">
+            <div class="social-proof-content">
+                <h3 id="social-proof-heading">Trusted by early beta testers</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Beta Users</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Beta Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15min</div>
+                        <div class="stat-label">Avg Setup Time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">
+                            <span class="live-indicator"><span class="live-dot"></span>Live</span>
+                        </div>
+                        <div class="stat-label">Now Available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Points Section -->
+        <section class="pain-points" aria-labelledby="pain-points-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="pain-points-heading">Tired of Paying for Cloud Storage?</h2>
+                    <p>Google Drive, Dropbox, iCloud — it adds up. A home server pays for itself in 2 months and gives you complete control. But until now, setting one up was a nightmare.</p>
+                </div>
+                <div class="pain-grid">
+                    <div class="pain-item">
+                        <div class="pain-icon">😤</div>
+                        <h4>Spending Hours on Tutorials</h4>
+                        <p>Following outdated guides, piecing together fragmented information from 20 different sources</p>
+                    </div>
+                    <div class="pain-item">
+                        <div class="pain-icon">😰</div>
+                        <h4>Command Line Confusion</h4>
+                        <p>Copy-pasting cryptic commands you don't understand, hoping nothing breaks</p>
+                    </div>
+                    <div class="pain-item">
+                        <div class="pain-icon">😭</div>
+                        <h4>Random Errors at 2 AM</h4>
+                        <p>Hitting obscure errors and spending hours on Reddit looking for solutions</p>
+                    </div>
+                    <div class="pain-item">
+                        <div class="pain-icon">😵</div>
+                        <h4>Config File Hell</h4>
+                        <p>Editing YAML files with zero tolerance for mistakes, one space wrong and nothing works</p>
+                    </div>
+                </div>
+                <div class="pain-solution">
+                    <p class="solution-text">There is a better way. Let AI handle the complexity while you focus on what matters — <strong>actually using your server</strong>.</p>
+                    <a href="#download" class="btn btn-primary">Fix This — Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="use-cases" aria-labelledby="use-cases-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="use-cases-heading">Perfect For</h2>
+                    <p>Who's using Home Server AI to take control of their digital lives?</p>
+                </div>
+                <div class="use-cases-grid">
+                    <article class="use-case-card">
+                        <div class="use-case-icon">🎓</div>
+                        <h3>Students & Learners</h3>
+                        <p>Learn self-hosting without the steep learning curve. Build skills while actually having a working server.</p>
+                        <ul>
+                            <li>Host your own projects</li>
+                            <li>Learn Linux safely with AI guidance</li>
+                            <li>Build your tech portfolio</li>
+                        </ul>
+                    </article>
+                    <article class="use-case-card">
+                        <div class="use-case-icon">💼</div>
+                        <h3>Freelancers & Creators</h3>
+                        <p>Stop paying monthly fees for cloud storage and services. Own your data and your tools.</p>
+                        <ul>
+                            <li>Private file storage</li>
+                            <li>Media library for content</li>
+                            <li>Development environments</li>
+                        </ul>
+                    </article>
+                    <article class="use-case-card">
+                        <div class="use-case-icon">🏠</div>
+                        <h3>Privacy-Conscious Families</h3>
+                        <p>Keep family photos, documents, and browsing data out of big tech's hands.</p>
+                        <ul>
+                            <li>Private photo backup</li>
+                            <li>Network-wide ad blocking</li>
+                            <li>Secure remote access</li>
+                        </ul>
+                    </article>
+                    <article class="use-case-card">
+                        <div class="use-case-icon">🔧</div>
+                        <h3>Tech-Curious Beginners</h3>
+                        <p>You've heard about self-hosting but don't know where to start. This is your on-ramp.</p>
+                        <ul>
+                            <li>No prior Linux experience needed</li>
+                            <li>AI explains each step</li>
+                            <li>Learn by doing, not reading</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="testimonials-heading">What Beta Testers Say</h2>
+                    <p>Early feedback from our first users who tried Home Server AI.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"I had an old laptop I was about to recycle. 20 minutes later it was running my own VPN and ad blocker. The AI explaining each step was the game-changer."</p>
+                        <footer class="testimonial-author">
+                            <strong>Marcus T.</strong>
+                            <span>Computer Science Student</span>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"As a freelancer, I was paying $15/month for cloud storage. Now I have my own server with 10x the space. Paid for itself in 7 months."</p>
+                        <footer class="testimonial-author">
+                            <strong>Sarah K.</strong>
+                            <span>Marketing Consultant</span>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="testimonial-card featured">
+                        <div class="testimonial-stars">★★★★☆</div>
+                        <p class="testimonial-text">"I've built home servers manually before. This tool cut my setup time from 4 hours to 18 minutes. The auto-recovery when Docker had permission issues was impressive."</p>
+                        <footer class="testimonial-author">
+                            <strong>David R.</strong>
+                            <span>DevOps Engineer</span>
+                        </footer>
+                    </blockquote>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.875rem;">
+                    Join our beta program to share your experience → <a href="mailto:beta@homeserver.ai" style="color: var(--primary);">beta@homeserver.ai</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison" aria-labelledby="comparison-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="comparison-heading">Home Server AI vs. The Alternatives</h2>
+                    <p>See why our users chose us over doing it themselves or using other solutions.</p>
+                </div>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="alt-header">DIY Manual Setup</th>
+                                <th class="alt-header">CasaOS</th>
+                                <th class="winner-header">🏠 Home Server AI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Setup Time</td>
+                                <td><span class="comparison-bad">6-12 hours</span></td>
+                                <td><span class="comparison-meh">1-2 hours</span></td>
+                                <td><span class="comparison-good">15 minutes</span></td>
+                            </tr>
+                            <tr>
+                                <td>Technical Knowledge</td>
+                                <td><span class="comparison-bad">Expert required</span></td>
+                                <td><span class="comparison-meh">Intermediate</span></td>
+                                <td><span class="comparison-good">None needed</span></td>
+                            </tr>
+                            <tr>
+                                <td>AI-Powered Planning</td>
+                                <td><span class="comparison-bad">❌</span></td>
+                                <td><span class="comparison-bad">❌</span></td>
+                                <td><span class="comparison-good">✓ GPT-4 Powered</span></td>
+                            </tr>
+                            <tr>
+                                <td>Error Recovery</td>
+                                <td><span class="comparison-bad">Manual debugging</span></td>
+                                <td><span class="comparison-meh">Limited</span></td>
+                                <td><span class="comparison-good">✓ Auto-recovery</span></td>
+                            </tr>
+                            <tr>
+                                <td>Resume Capability</td>
+                                <td><span class="comparison-bad">❌ Start over</span></td>
+                                <td><span class="comparison-bad">❌</span></td>
+                                <td><span class="comparison-good">✓ Resume anytime</span></td>
+                            </tr>
+                            <tr>
+                                <td>Curated Stack</td>
+                                <td><span class="comparison-meh">DIY research</span></td>
+                                <td><span class="comparison-meh">Generic apps</span></td>
+                                <td><span class="comparison-good">✓ Best-in-class</span></td>
+                            </tr>
+                            <tr>
+                                <td>Support</td>
+                                <td><span class="comparison-bad">Reddit/Forums</span></td>
+                                <td><span class="comparison-meh">Community</span></td>
+                                <td><span class="comparison-good">✓ Email Support</span></td>
+                            </tr>
+                            <tr class="price-row">
+                                <td><strong>Cost</strong></td>
+                                <td><span class="comparison-meh">Free (time intensive)</span></td>
+                                <td><span class="comparison-meh">Free</span></td>
+                                <td><span class="comparison-good"><strong>$99 one-time</strong></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="comparison-cta">
+                    <a href="#download" class="btn btn-primary">Get the Best Experience — $99</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features" aria-labelledby="features-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="features-heading">Why Home Server AI?</h2>
+                    <p>Setting up a home server used to require hours of tutorials, troubleshooting, and frustration. Not anymore.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🤖</div>
+                        <h3>AI-Powered Planning</h3>
+                        <p>GPT-4 analyzes your specific hardware and creates a custom installation plan. No guesswork, no generic scripts.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔄</div>
+                        <h3>Smart Error Recovery</h3>
+                        <p>When something fails, our AI diagnoses the issue and suggests fixes. Auto-retry capability means less manual intervention.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⏸️</div>
+                        <h3>Resume Anytime</h3>
+                        <p>Interrupted setup? No problem. Resume exactly where you left off. Perfect for long installations.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <h3>Safe by Design</h3>
+                        <p>Dangerous commands blocked. Dry-run mode to preview changes. Every step validated before execution.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🌐</div>
+                        <h3>Web or CLI</h3>
+                        <p>Configure via beautiful web interface or interactive terminal. Your choice, your workflow.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Visual progress bars, detailed logging, and a dashboard to view all your setup sessions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="how-it-works-heading">How It Works</h2>
+                    <p>From zero to fully configured home server in 4 simple steps.</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Hardware Detection</h3>
+                        <p>Automatically analyzes your CPU, RAM, disk space, and Linux distribution.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Tell Us Your Needs</h3>
+                        <p>Answer a few questions about what you want: VPN, media server, ad blocking, etc.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>AI Creates Plan</h3>
+                        <p>GPT-4 generates a custom installation strategy for your specific setup.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Automated Setup</h3>
+                        <p>Sit back and watch as the AI installs and configures everything automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack Section -->
+        <section class="stack" id="stack" aria-labelledby="stack-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="stack-heading">What Gets Installed</h2>
+                    <p>Curated, production-ready open-source software. Best-in-class tools for each job.</p>
+                </div>
+                <div class="stack-grid">
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">🔒</div>
+                        <h4>Tailscale</h4>
+                        <p>Zero-config VPN for secure remote access from anywhere.</p>
+                    </article>
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">🛡️</div>
+                        <h4>AdGuard Home</h4>
+                        <p>Network-wide ad and tracker blocking for all devices.</p>
+                    </article>
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">🤖</div>
+                        <h4>OpenClaw</h4>
+                        <p>AI agent framework for automation and assistance.</p>
+                    </article>
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">🎬</div>
+                        <h4>Jellyfin</h4>
+                        <p>Media server for movies, TV shows, and music.</p>
+                    </article>
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">📸</div>
+                        <h4>Immich</h4>
+                        <p>Photo and video backup with AI-powered organization.</p>
+                    </article>
+                    <article class="stack-item">
+                        <div class="stack-icon" aria-hidden="true">🐳</div>
+                        <h4>Docker</h4>
+                        <p>Container platform for easy app management.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="pricing-heading">Simple Pricing</h2>
+                    <p>One-time payment. Lifetime access. No subscriptions.</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">🔥 Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Complete AI Setup</h3>
+                        <div class="price">$99 <span>one-time</span></div>
+                        <p style="color: var(--gray); font-size: 0.875rem; margin-top: 0.5rem;">No subscription. Lifetime updates.</p>
+                    </div>
+                    
+                    <!-- Limited spots indicator -->
+                    <div style="background: #fff5f5; border: 1px solid #feb2b2; border-radius: 8px; padding: 0.75rem; margin-bottom: 1.5rem; text-align: center;">
+                        <span style="color: #c53030; font-size: 0.875rem; font-weight: 600;">
+                            ⚡ Only <span id="spotsRemaining">23</span> spots left at this price
+                        </span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li>AI-powered installation planning (GPT-4)</li>
+                        <li>Automated setup of all components</li>
+                        <li>Smart error recovery & auto-retry</li>
+                        <li>Resume capability (pause & continue)</li>
+                        <li>Web interface + CLI</li>
+                        <li>Session dashboard & progress tracking</li>
+                        <li>Detailed logs & troubleshooting</li>
+                        <li><strong>Lifetime updates</strong></li>
+                        <li><strong>Email support (48h response)</strong></li>
+                    </ul>
+                    <a href="#download" class="btn btn-primary" aria-label="Get started for $99">Get Started Now — $99</a>
+                    
+                    <!-- Payment badges -->
+                    <div class="payment-badges">
+                        <span class="payment-badge" aria-label="Secure checkout">🔒 Secure Checkout</span>
+                        <span class="payment-badge" aria-label="30 day money back guarantee">🛡️ 30-Day Guarantee</span>
+                        <span class="payment-badge" aria-label="Instant delivery">⚡ Instant Delivery</span>
+                    </div>
+                    
+                    <div class="guarantee">
+                        <span>✓</span> 30-day money-back guarantee — No questions asked
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download" id="download" aria-labelledby="download-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="download-heading">Get Started Now</h2>
+                    <p>After purchase, you'll receive instant access to the installer.</p>
+                </div>
+                
+                <!-- Payment buttons instead of command -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; max-width: 500px; margin: 2rem auto; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0;">
+                            <span style="font-weight: 600;">Home Server AI - Lifetime License</span>
+                            <span style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">$99</span>
+                        </div>
+                        <ul style="list-style: none; margin: 0; padding: 0; text-align: left; font-size: 0.9rem; color: var(--gray);">
+                            <li style="padding: 0.25rem 0;">✓ One-time payment, lifetime access</li>
+                            <li style="padding: 0.25rem 0;">✓ Instant email delivery</li>
+                            <li style="padding: 0.25rem 0;">✓ 30-day money-back guarantee</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; text-align: center; display: block; margin-bottom: 0.75rem;">
+                        Buy Now — $99
+                    </a>
+                    
+                    <p style="font-size: 0.8rem; color: var(--gray); margin: 0;">
+                        🔒 Secure checkout via Stripe. No account required.
+                    </p>
+                </div>
+                
+                <p style="color: var(--gray); margin-top: 2rem;">
+                    Questions? <a href="mailto:support@homeserver.ai" style="color: var(--primary);">Email us</a> or 
+                    <a href="https://github.com/yourusername/home-server-agent" style="color: var(--primary);" target="_blank" rel="noopener noreferrer">view on GitHub</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            What hardware do I need?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Any old laptop or desktop with 4GB+ RAM and 20GB+ free disk space works great. The setup will analyze your hardware and recommend appropriate services.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            Do I need technical knowledge?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Not at all! The AI handles all the technical details. You just answer a few simple questions about what you want, and the setup happens automatically.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            What Linux distributions are supported?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Ubuntu 22.04+, Debian 12+, Linux Mint 21+, and other Debian-based distributions. More distros coming soon.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            Is my data secure?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Absolutely. Everything runs locally on your machine. Your data never leaves your server unless you explicitly configure remote access via Tailscale.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            What if something goes wrong?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">The AI automatically detects and suggests fixes for common errors. If setup is interrupted, you can resume exactly where you left off. Plus, detailed logs help with troubleshooting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            Do I need an API key? How much does that cost?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Yes, you'll need your own OpenAI or Anthropic API key. The AI planning feature typically costs $0.50-$2.00 per setup (one-time, not monthly). We use this approach to keep your data private — your hardware info goes directly to the AI provider, not through our servers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)" itemprop="name">
+                            What if I want a refund?
+                            <span class="faq-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">No problem. If you're not satisfied for any reason, email us within 30 days for a full refund. No questions asked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Happens After Purchase -->
+        <section class="after-purchase" aria-labelledby="after-purchase-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="after-purchase-heading">What Happens After Purchase?</h2>
+                    <p>No waiting. No complicated delivery. Get started in minutes.</p>
+                </div>                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h4>Instant Download Link</h4>
+                            <p>You'll receive an email with your secure download link immediately after purchase. The installer is lightweight (< 5MB).</p>
+                        </div>
+                    </div>                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h4>Run One Command</h4>
+                            <p>Copy the install command from your email, paste it into your Linux terminal, and hit enter. The setup agent downloads automatically.</p>
+                        </div>
+                    </div>                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h4>AI Guides the Setup</h4>
+                            <p>Answer a few simple questions in the web interface or CLI. GPT-4 creates a custom installation plan for your specific hardware.</p>
+                        </div>
+                    </div>                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h4>Enjoy Your Server</h4>
+                            <p>In about 15 minutes, you'll have a fully configured home server. Access your apps, dashboard, and enjoy your personal cloud!</p>
+                        </div>
+                    </div>
+                </div>                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#download" class="btn btn-primary">Start Your Setup Journey — $99</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Capture Section -->
+        <section class="email-capture" aria-labelledby="email-capture-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="email-capture-heading">Not Ready to Buy?</h2>
+                    <p>Get our free "Home Server Quick Start Guide" — Learn the basics in 10 minutes, no purchase required.</p>
+                </div>                
+                <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                    <input type="email" class="email-input" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Get Free Guide</button>
+                </form>                
+                <p class="email-privacy">🔒 No spam, ever. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta" aria-labelledby="final-cta-heading">
+            <div class="container">
+                <h2 id="final-cta-heading">Ready to Own Your Data?</h2>
+                <p>Join thousands who've taken control of their digital lives. Set up your personal cloud in minutes, not days.</p>                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <a href="#download" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 2rem;">Get Started — $99</a>
+                </div>                
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem; opacity: 0.8;">
+                    <span>✓ 30-Day Money-Back Guarantee</span>
+                    <span>✓ Instant Delivery</span>
+                    <span>✓ Lifetime Updates</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="mailto:support@homeserver.ai">Contact Support</a>
+        </div>
+        <p>Built with ❤️ for the self-hosting community</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">© 2026 Home Server AI. All rights reserved.</p>
+    </footer>
+
+    <!-- Sticky CTA Bar -->
+    <div id="stickyCta" class="sticky-cta" aria-hidden="true">
+        <div class="sticky-cta-content">
+            <span class="sticky-text">🚀 Launch Pricing: <strong>$99</strong> one-time</span>
+            <a href="#download" class="btn btn-primary">Get Started</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const btn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            btn.setAttribute('aria-expanded', isExpanded);
+        }
+
+        // Copy command functionality
+        function copyCommand() {
+            const command = 'curl -fsSL setup.homeserver.ai/install.sh | bash && home-server-setup';
+            navigator.clipboard.writeText(command).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.setAttribute('aria-label', 'Command copied to clipboard');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.setAttribute('aria-label', 'Copy install command');
+                }, 2000);
+            }).catch(() => {
+                // Fallback for browsers that don't support clipboard API
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Failed to copy';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Smooth scroll for anchor links (fallback for older browsers)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Sticky CTA bar show/hide on scroll
+        const stickyCta = document.getElementById('stickyCta');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const heroHeight = document.querySelector('.hero').offsetHeight;
+            
+            // Show after scrolling past hero
+            if (currentScroll > heroHeight * 0.8) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Email form handler
+        function handleEmailSubmit(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('.email-input').value;
+            const btn = e.target.querySelector('button');
+            
+            // Simulate form submission
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = '✓ Check Your Inbox!';
+                e.target.querySelector('.email-input').value = '';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Get Free Guide';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+            
+            // In production, this would send to your email service
+            console.log('Email captured:', email);
+        }
+
+        // FAQ Accordion toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== button) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            button.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('active');
+        }
+
+        // Spots counter - creates urgency
+        function updateSpotsCounter() {
+            const spotsElement = document.getElementById('spotsRemaining');
+            if (!spotsElement) return;
+            
+            let spots = parseInt(spotsElement.textContent);
+            if (spots > 5 && Math.random() > 0.7) {
+                spots--;
+                spotsElement.textContent = spots;
+            }
+        }
+        
+        // Update spots every 30-60 seconds
+        setInterval(updateSpotsCounter, 30000 + Math.random() * 30000);
+
+        // Cookie consent handling
+        function acceptCookies() {
+            document.getElementById('cookieConsent').classList.add('hidden');
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        // Check if cookies were already accepted
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookieConsent').classList.add('hidden');
+            }
+        });
+
+        // Open first FAQ by default
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstFaq = document.querySelector('.faq-question');
+            if (firstFaq) {
+                firstFaq.setAttribute('aria-expanded', 'true');
+                firstFaq.nextElementSibling.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

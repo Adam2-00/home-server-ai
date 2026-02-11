@@ -1,0 +1,14 @@
+{
+  "use_cases": ["vpn", "ad_blocking", "media_server"],
+  "media_types": ["movies", "tv", "photos"],
+  "want_tailscale": true,
+  "want_adguard": true,
+  "want_openclaw": true,
+  "want_immich": true,
+  "want_jellyfin": true,
+  "storage_path": "~/home-server-data",
+  "tailscale_auth_key": null,
+  "openclaw_gateway_token": null,
+  "admin_email": null,
+  "notes": "Example configuration - modify for your setup"
+}

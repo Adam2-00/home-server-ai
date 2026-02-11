@@ -1,0 +1,19 @@
+# Website redirects
+# Format: from_path to_url status_code
+
+# Short URL for install script
+/install https://raw.githubusercontent.com/yourusername/home-server-agent/main/install.sh 301
+/download https://raw.githubusercontent.com/yourusername/home-server-agent/main/install.sh 301
+
+# Pretty URLs for legal pages
+/privacy /privacy.html 200
+/terms /terms.html 200
+
+# 404 fallback
+/404 /404.html 200
+
+# API endpoint (if you add one later)
+/api/* /.netlify/functions/:splat 200
+
+# SPA fallback (optional, for client-side routing)
+# /* /index.html 200

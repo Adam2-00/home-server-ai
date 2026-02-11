@@ -1,0 +1,18 @@
+# Security Headers for Netlify
+# These headers enhance security without breaking functionality
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'
+
+/privacy
+  X-Robots-Tag: noindex
+
+/terms
+  X-Robots-Tag: noindex
+
+/404.html
+  X-Robots-Tag: noindex

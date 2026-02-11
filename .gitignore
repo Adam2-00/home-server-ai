@@ -7,6 +7,13 @@ HEARTBEAT.md
 IDENTITY.md
 TOOLS.md
 
+# OpenClaw personal directories
+memory/
+skills/
+
+# Personal client files
+maton_client.py
+
 # OpenClaw system files
 .openclaw/
 
